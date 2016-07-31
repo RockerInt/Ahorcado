@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Ahorcado</title>
+	<meta charset="utf-8" />
+    <link href="favicon.ico" rel="shortcut icon" type="image/x-icon">
+    <link rel="stylesheet" href="assets/css/ahorcado.css?version2">
+    <script src="assets/js/ahorcado.js"></script>
+</head>
+<body>
+    <h1 class="text-size-40"><b>Ahorcado</b></h1>
+    <h3 class="text-white text-size-30">¡Adivina Letra a Letra!</h3>
+    <div>
+        <canvas id="cnvCanvas"></canvas>
+    </div>
+    <br />
+    <div>
+        <label id="lblPista" class="text-white text-size-35"></label>
+    </div>
+    <br />
+    <div>
+        <input id="txtLetra" type="text" placeholder="Escribe una Letra" />
+        <input id="btnPlay" type="button" value="Play" title="Verifica la Letra Escogida" />
+    </div>
+    <script type="text/javascript">
+        main();
+    </script>
+</body>
+</html>
