@@ -14,6 +14,6 @@ Este es un Video-Juego Web del clasico juego de Ahorcado
 
 [Documentación]
 
-[Planes Futuros]
+[Roadmap]
 
 [Licencia]
