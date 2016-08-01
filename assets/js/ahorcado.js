@@ -61,10 +61,13 @@ var Ahorcado = function (context, gameOverUrl, fondoUrl, posteUrl, poste1Url, po
     this.lstFunctionsConfirmar = [];
 }
 
-Ahorcado.prototype.bind = function () {
-
+Ahorcado.prototype.bindFondo = function () {
     //Dibujando el fondo
     this.fondo.bind(this.lstFunctionsConfirmar[0]);
+}
+
+Ahorcado.prototype.bind = function () {
+
     //Dibujando el poste
     if (this.intentos == 0) {
         this.poste.bind(this.lstFunctionsConfirmar[1]);
@@ -113,7 +116,7 @@ function main() {
     hombre = new Ahorcado(canvas.getContext("2d"), "assets/images/game-over.png", "assets/images/fondo.png", postes[0], postes[1], postes[2], postes[3], postes[4], postes[5]);
 
     var confirmarGameOver = function () { hombre.gameOver.imagenOK = true; hombre.gameOver.dibujar(); };
-    var confirmarFondo = function () { hombre.fondo.imagenOK = true; hombre.fondo.dibujar(); };
+    var confirmarFondo = function () { hombre.fondo.imagenOK = true; hombre.fondo.dibujar(); hombre.bind(); };
     var confirmarPoste = function () { hombre.poste.imagenOK = true; hombre.poste.dibujar(); };
     var confirmarPoste1 = function () { hombre.poste1.imagenOK = true; hombre.poste1.dibujar(); };
     var confirmarPoste2 = function () { hombre.poste2.imagenOK = true; hombre.poste2.dibujar(); };
@@ -131,7 +134,7 @@ function main() {
 
     mostrarPista(espacio);
 
-    hombre.bind();
+    hombre.bindFondo();
 }
 
 function agregarLetra() {
