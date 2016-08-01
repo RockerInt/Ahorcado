@@ -37,7 +37,7 @@ A key tenet when Red Hat was designing OpenShift Origin was the ability for deve
 * Sugar CRM
 * Redmine
 * MediaWiki
-
+------------------------------------------------------------------
 === Quickstart Installation
 Point your browser to the following URL:
 
