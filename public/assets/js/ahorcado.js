@@ -103,41 +103,7 @@ Ahorcado.prototype.trazar = function () {
     this.bind();
 }
 
-function main() {
-
-    var canvas = document.getElementById("cnvCanvas");
-    var btnPlay = document.getElementById("btnPlay");
-    txtLetra = document.getElementById("txtLetra");
-    lengthRespuesta = 0;
-
-    canvas.width = 700;
-    canvas.height = 622;
-
-    hombre = new Ahorcado(canvas.getContext("2d"), "assets/images/game-over.png", "assets/images/fondo.png", postes[0], postes[1], postes[2], postes[3], postes[4], postes[5]);
-
-    var confirmarGameOver = function () { hombre.gameOver.imagenOK = true; hombre.gameOver.dibujar(); };
-    var confirmarFondo = function () { hombre.fondo.imagenOK = true; hombre.fondo.dibujar(); hombre.bind(); };
-    var confirmarPoste = function () { hombre.poste.imagenOK = true; hombre.poste.dibujar(); };
-    var confirmarPoste1 = function () { hombre.poste1.imagenOK = true; hombre.poste1.dibujar(); };
-    var confirmarPoste2 = function () { hombre.poste2.imagenOK = true; hombre.poste2.dibujar(); };
-    var confirmarPoste3 = function () { hombre.poste3.imagenOK = true; hombre.poste3.dibujar(); };
-    var confirmarPoste4 = function () { hombre.poste4.imagenOK = true; hombre.poste4.dibujar(); };
-    var confirmarPoste5 = function () { hombre.poste5.imagenOK = true; hombre.poste5.dibujar(); };
-
-    hombre.lstFunctionsConfirmar = [confirmarFondo, confirmarPoste, confirmarPoste1, confirmarPoste2, confirmarPoste3, confirmarPoste4, confirmarPoste5, confirmarGameOver];
-
-    btnPlay.addEventListener("click", agregarLetra);
-
-    palabra = palabras[Math.floor(Math.random() * 20)];
-
-    espacio = new Array(palabra.length);
-
-    mostrarPista(espacio);
-
-    hombre.bindFondo();
-}
-
-function agregarLetra() {
+function btnPlay_Click() {
     var letra = txtLetra.value;
     txtLetra.value = "";
     mostrarPalabra(palabra, hombre, letra);
@@ -189,4 +155,48 @@ function mostrarPista(espacio) {
         }
     }
     lblPista.innerText = texto;
+}
+
+function btnInit_Click() {
+
+    var divGame = document.getElementById("divGame");
+    var divIntro = document.getElementById("divIntro");
+    var canvas = document.getElementById("cnvCanvas");
+    var btnPlay = document.getElementById("btnPlay");
+    txtLetra = document.getElementById("txtLetra");
+    lengthRespuesta = 0;
+
+    divGame.className = "";
+    divIntro.className = "hide";
+    canvas.width = 700;
+    canvas.height = 622;
+
+    hombre = new Ahorcado(canvas.getContext("2d"), "assets/images/game-over.png", "assets/images/fondo.png", postes[0], postes[1], postes[2], postes[3], postes[4], postes[5]);
+
+    var confirmarGameOver = function () { hombre.gameOver.imagenOK = true; hombre.gameOver.dibujar(); };
+    var confirmarFondo = function () { hombre.fondo.imagenOK = true; hombre.fondo.dibujar(); hombre.bind(); };
+    var confirmarPoste = function () { hombre.poste.imagenOK = true; hombre.poste.dibujar(); };
+    var confirmarPoste1 = function () { hombre.poste1.imagenOK = true; hombre.poste1.dibujar(); };
+    var confirmarPoste2 = function () { hombre.poste2.imagenOK = true; hombre.poste2.dibujar(); };
+    var confirmarPoste3 = function () { hombre.poste3.imagenOK = true; hombre.poste3.dibujar(); };
+    var confirmarPoste4 = function () { hombre.poste4.imagenOK = true; hombre.poste4.dibujar(); };
+    var confirmarPoste5 = function () { hombre.poste5.imagenOK = true; hombre.poste5.dibujar(); };
+
+    hombre.lstFunctionsConfirmar = [confirmarFondo, confirmarPoste, confirmarPoste1, confirmarPoste2, confirmarPoste3, confirmarPoste4, confirmarPoste5, confirmarGameOver];
+
+    btnPlay.addEventListener("click", btnPlay_Click);
+
+    palabra = palabras[Math.floor(Math.random() * 20)];
+
+    espacio = new Array(palabra.length);
+
+    mostrarPista(espacio);
+
+    hombre.bindFondo();
+}
+
+function main() {
+    
+    var btnInit = document.getElementById("btnInit");
+    btnInit.addEventListener("click", btnInit_Click);
 }

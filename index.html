@@ -1,7 +1,8 @@
 ﻿<!DOCTYPE html>
 <html>
+
 <head>
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta charset="utf-8" />
     <meta name="description" content="overview &amp; stats" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
@@ -11,23 +12,43 @@
     <link rel="stylesheet" href="assets/css/ahorcado.css?version2">
     <script src="assets/js/ahorcado.js"></script>
 </head>
+
 <body>
     <h1 class="text-size-40"><b>Ahorcado</b></h1>
-    <h3 class="text-white text-size-30">¡Adivina Letra a Letra!</h3>
-    <div>
-        <canvas id="cnvCanvas"></canvas>
+    <div id="divIntro">
+        <br />
+        <br />
+        <br />
+        <h3 class="text-white text-size-30">¡Bienvenido!</h3>
+        <br />
+        <br />
+        <label class="text-white text-size-35">¿Deseas Iniciar?</label>
+        <br />
+        <br />
+        <br />
+        <br />
+        <div>
+            <input id="btnInit" type="button" value="Iniciar" title="Inicia una Partida" />
+        </div>
     </div>
-    <br />
-    <div>
-        <label id="lblPista" class="text-white text-size-35"></label>
-    </div>
-    <br />
-    <div>
-        <input id="txtLetra" type="text" placeholder="Escribe una Letra" />
-        <input id="btnPlay" type="button" value="Play" title="Verifica la Letra Escogida" />
+    <div id="divGame" class="hide">
+        <h3 class="text-white text-size-30">¡Adivina Letra a Letra!</h3>
+        <div>
+            <canvas id="cnvCanvas"></canvas>
+        </div>
+        <br />
+        <div>
+            <label id="lblPista" class="text-white text-size-35"></label>
+        </div>
+        <br />
+        <div>
+            <input id="txtLetra" type="text" placeholder="Escribe una Letra" />
+            <input id="btnPlay" type="button" value="Play" title="Verifica la Letra Escogida" />
+        </div>
     </div>
     <script type="text/javascript">
         main();
     </script>
 </body>
+
 </html>
